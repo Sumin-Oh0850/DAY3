@@ -55,7 +55,6 @@
                     method: "POST",
                     headers: { "content-type": "application/json" },
                     body: JSON.stringify({ message }),
-                    signal: AbortSignal.timeout(65000),
                 })
                 const j = await r.json()
                 wait.remove()
@@ -76,7 +75,7 @@
                 add("me", message)
                 $("q").value = ""
             } catch (err) {
-                wait.textContent = err.name === "TimeoutError" ? "응답이 너무 오래 걸립니다. 잠시 후 다시 시도하세요." : "요청 실패: " + err.message + " (Vercel에 배포된 주소에서 열었는지 확인하세요. 파일로 직접 열면 /api가 없습니다.)"
+                wait.textContent = "요청 실패: " + err.message + " (Vercel에 배포된 주소에서 열었는지 확인하세요. 파일로 직접 열면 /api가 없습니다.)"
             }
             $("go").disabled = false
         }
