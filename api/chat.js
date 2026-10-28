@@ -3,7 +3,7 @@ const { tools, runTool } = require("./tools");
 // 앞에서부터 순서대로 사용하고, 한도 초과·사용 불가면 다음 모델로 교체한다.
 // Vercel 환경변수 GEMINI_MODELS(쉼표 구분)로 목록을 바꿀 수 있다.
 const MODELS = (process.env.GEMINI_MODELS ||
-  "gemini-3.8-flash,gemini-3.1-flash-lite,gemini-2.5-flash-lite,gemini-3-flash,gemini-2.5-flash,gemini-flash-latest")
+  "gemini-2.5-flash-lite")
   .split(",").map((s) => s.trim()).filter(Boolean);
 const unavailableUntil = {}; // 모델 → 다시 시도할 수 있는 시각(ms)
 const MAX_TURNS = 6;
