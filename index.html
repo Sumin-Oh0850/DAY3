@@ -59,6 +59,13 @@
                 const j = await r.json()
                 wait.remove()
                 const box = add("bot" + (j.error ? " err" : ""), j.error ? "오류: " + j.error : j.answer)
+                if (j.model || (j.skipped || []).length) {
+                    const m = document.createElement("div")
+                    m.className = "tool"
+                    m.textContent = `🤖 사용 모델: ${j.model || "없음"}` +
+                        ((j.skipped || []).length ? `\n⏭ 건너뜀(한도 초과/사용 불가): ${j.skipped.join(", ")}` : "")
+                    box.after(m)
+                }
                 for (const t of (j.trace || []).reverse()) {
                     const d = document.createElement("div")
                     d.className = "tool"
