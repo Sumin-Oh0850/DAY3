@@ -1,6 +1,6 @@
 const { tools, runTool } = require("./tools");
 
-const MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash";
+const MODEL = process.env.GEMINI_MODEL || "gemini-flash-latest";
 const MAX_TURNS = 6;
 
 const SYSTEM =
