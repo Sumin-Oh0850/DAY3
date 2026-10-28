@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실시간 지진 지구본</title>
+    <style>
+        html, body { margin: 0; height: 100%; background: #000; color: #eee; font-family: sans-serif; overflow: hidden; }
+        #globe { position: absolute; inset: 0; }
+        .panel { position: absolute; left: 12px; top: 12px; z-index: 1; max-width: 280px;
+                 background: rgba(10, 14, 30, .78); border: 1px solid #334; border-radius: 10px; padding: 12px 14px; }
+        h1 { font-size: 17px; margin: 0 0 8px; }
+        label { display: block; font-size: 13px; margin-top: 8px; }
+        select, input[type=range] { width: 100%; }
+        #stat { font-size: 13px; margin-top: 10px; line-height: 1.5; }
+        #top { font-size: 12px; margin-top: 8px; color: #ffb4a0; }
+        .src { font-size: 11px; color: #889; margin-top: 8px; }
+        .legend span { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin: 0 3px 0 6px; }
+    </style>
+</head>
+<body>
+    <div class="panel">
+        <h1>🌍 실시간 지진 지구본</h1>
+        <label>기간
+            <select id="period">
+                <option value="2.5_day">최근 24시간 (규모 2.5+)</option>
+                <option value="2.5_week" selected>최근 7일 (규모 2.5+)</option>
+                <option value="4.5_month">최근 30일 (규모 4.5+)</option>
+            </select>
+        </label>
+        <label>최소 규모 <b id="minv">2.5</b>
+            <input type="range" id="min" min="2.5" max="7" step="0.5" value="2.5">
+        </label>
+        <div id="stat">불러오는 중…</div>
+        <div id="top"></div>
+        <div class="legend src">
+            <span style="background:#ffd54a"></span>~4
+            <span style="background:#ff8a3d"></span>4~5.5
+            <span style="background:#ff2d55"></span>5.5+
+        </div>
+        <div class="src">데이터: USGS Earthquake Hazards Program · 3분마다 자동 갱신 · 점을 마우스로 가리키면 상세 표시</div>
+    </div>
+    <div id="globe"></div>
+
+    <script src="https://unpkg.com/globe.gl@2.32.0/dist/globe.gl.min.js"></script>
+    <script>
+        const $ = (id) => document.getElementById(id)
+        const FEED = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/"
+        const color = (m) => m >= 5.5 ? "#ff2d55" : m >= 4 ? "#ff8a3d" : "#ffd54a"
+        let quakes = []
+
+        const world = Globe()($("globe"))
+            .globeImageUrl("https://unpkg.com/three-globe@2.31.0/example/img/earth-night.jpg")
+            .backgroundImageUrl("https://unpkg.com/three-globe@2.31.0/example/img/night-sky.png")
+            .atmosphereColor("#6aa7ff")
+            // 규모에 비례한 높이의 기둥
+            .pointLat("lat").pointLng("lng")
+            .pointAltitude(d => Math.pow(d.mag, 2) / 400)
+            .pointRadius(d => 0.15 + d.mag * 0.05)
+            .pointColor(d => color(d.mag))
+            // 퍼져 나가는 파동 링
+            .ringLat("lat").ringLng("lng")
+            .ringColor(d => t => `rgba(${d.mag >= 5.5 ? "255,45,85" : d.mag >= 4 ? "255,138,61" : "255,213,74"},${1 - t})`)
+            .ringMaxRadius(d => d.mag * 1.6)
+            .ringPropagationSpeed(d => d.mag * 0.6)
+            .ringRepeatPeriod(d => 2200 - d.mag * 150)
+            .pointLabel(d => `<div style="background:#000c;padding:6px 8px;border-radius:6px;font-size:12px">
+                <b>M${d.mag.toFixed(1)}</b> ${esc(d.place)}<br>${new Date(d.time).toLocaleString("ko-KR")}</div>`)
+        world.controls().autoRotate = true
+        world.controls().autoRotateSpeed = 0.5
+        world.pointOfView({ lat: 25, lng: 130, altitude: 2.2 })
+
+        const esc = (s) => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]))
+
+        const render = () => {
+            const min = +$("min").value
+            $("minv").textContent = min.toFixed(1)
+            const list = quakes.filter(q => q.mag >= min)
+            world.pointsData(list).ringsData(list.filter(q => q.mag >= 4))
+            const big = list.reduce((a, b) => (!a || b.mag > a.mag ? b : a), null)
+            $("stat").textContent = `표시 중 ${list.length}건 / 전체 ${quakes.length}건`
+            $("top").textContent = big ? `최대: M${big.mag.toFixed(1)} · ${big.place}` : ""
+        }
+
+        const load = async () => {
+            try {
+                const r = await fetch(FEED + $("period").value + ".geojson")
+                const j = await r.json()
+                quakes = j.features
+                    .filter(f => f.properties.mag != null)
+                    .map(f => ({ lng: f.geometry.coordinates[0], lat: f.geometry.coordinates[1],
+                                 mag: f.properties.mag, place: f.properties.place || "", time: f.properties.time }))
+                render()
+            } catch (e) {
+                $("stat").textContent = "데이터를 불러오지 못했습니다. 잠시 후 다시 시도하세요."
+            }
+        }
+
+        $("period").onchange = load
+        $("min").oninput = render
+        window.onresize = () => world.width(innerWidth).height(innerHeight)
+        load()
+        setInterval(load, 180000)
+    </script>
+</body>
+</html>
