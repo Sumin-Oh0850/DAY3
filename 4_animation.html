@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.html 코드 애니메이션</title>
+    <style>
+        :root { --bg:#f7f8fa; --card:#fff; --line:#dde1e7; --text:#1d2430; --muted:#6b7686; --hl:#fff1b8; --acc:#2b6cb0; --ok:#2f9e44; }
+        @media (prefers-color-scheme: dark) {
+            :root { --bg:#14171c; --card:#1d222a; --line:#303743; --text:#e6e9ee; --muted:#93a0b2; --hl:#5a4a12; --acc:#6aa7ff; --ok:#5fd07a; }
+        }
+        * { box-sizing: border-box; }
+        body { margin:0; padding:16px; background:var(--bg); color:var(--text); font-family:sans-serif; }
+        h1 { font-size:20px; margin:0 0 4px; }
+        .sub { color:var(--muted); font-size:13px; margin-bottom:12px; }
+        .bar { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-bottom:12px; }
+        button { padding:8px 14px; font-size:14px; border:1px solid var(--line); background:var(--card); color:var(--text); border-radius:6px; cursor:pointer; }
+        button:hover { border-color:var(--acc); }
+        .grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+        @media (max-width:760px) { .grid { grid-template-columns:1fr; } }
+        .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px; }
+        .card h2 { font-size:13px; margin:0 0 8px; color:var(--muted); font-weight:600; }
+        pre { margin:0; font:14px/1.9 Consolas, monospace; }
+        .ln { display:block; padding:0 8px; border-radius:4px; white-space:pre; }
+        .ln.on { background:var(--hl); outline:1px solid var(--acc); }
+        .row { display:flex; align-items:center; gap:6px; margin:5px 0; flex-wrap:wrap; }
+        .name { font:13px Consolas, monospace; min-width:84px; color:var(--muted); }
+        .cell { font:14px Consolas, monospace; min-width:38px; text-align:center; padding:4px 8px; border:1px solid var(--line); border-radius:6px; transition:.25s; }
+        .cell.key { background:var(--hl); border-color:var(--acc); }
+        .cell.cur { background:var(--acc); color:#fff; border-color:var(--acc); transform:scale(1.15); }
+        .cell.done { opacity:.45; }
+        .rowbox { padding:2px 6px; border-radius:8px; border:1px solid transparent; transition:.25s; }
+        .rowbox.on { border-color:var(--acc); background:color-mix(in srgb, var(--acc) 10%, transparent); }
+        #say { min-height:48px; margin:12px 0; padding:10px 12px; border-left:4px solid var(--acc); background:var(--card); border-radius:6px; font-size:15px; line-height:1.5; }
+        #out { font:13px/1.7 Consolas, monospace; max-height:230px; overflow:auto; }
+        #out div { padding:0 4px; }
+        #out .show { color:var(--ok); }
+        #out .last { background:var(--hl); }
+        .vars span { display:inline-block; margin-right:14px; font:14px Consolas, monospace; }
+        input[type=range] { width:110px; }
+    </style>
+</head>
+<body>
+    <h1>4.html 코드 애니메이션</h1>
+    <div class="sub">이중 for of 반복문이 한 단계씩 어떻게 실행되는지 보여줍니다. (실제 4.html은 키 100개 × 값 100개이고, 여기서는 이해를 위해 3개 × 3개로 줄였습니다.)</div>
+
+    <div class="bar">
+        <button id="play">▶ 재생</button>
+        <button id="step">한 단계 ▶|</button>
+        <button id="reset">↺ 처음으로</button>
+        <label>속도 <input type="range" id="speed" min="1" max="10" value="5"></label>
+        <span class="sub" id="count"></span>
+    </div>
+
+    <div id="say"></div>
+
+    <div class="grid">
+        <div class="card">
+            <h2>코드</h2>
+            <pre id="code"></pre>
+        </div>
+        <div class="card">
+            <h2>변수</h2>
+            <div class="vars"><span>i = <b id="vi">-</b></span><span>"a"+i = <b id="vk">-</b></span><span>element = <b id="ve">-</b></span></div>
+            <h2 style="margin-top:12px">v (바깥 반복이 도는 배열)</h2>
+            <div class="row" id="vrow"></div>
+            <h2 style="margin-top:12px">data (객체)</h2>
+            <div id="data"></div>
+        </div>
+    </div>
+
+    <div class="card" style="margin-top:12px">
+        <h2>콘솔 출력</h2>
+        <div id="out"></div>
+    </div>
+
+    <script>
+        // 설명용으로 줄인 데이터 (4.html과 같은 구조: "a" + 숫자 키, 값은 배열)
+        const data = { a1: [10, 20, 30], a2: [11, 21, 31], a3: [37, 38, 39] }
+        const v = [1, 2, 3]
+
+        const CODE = [
+            'for (const i of v) {',
+            '    for (const element of data["a"+i]) {',
+            '        console.log(element+"\\n")',
+            '        show(element)',
+            '    }',
+            '}',
+        ]
+
+        // 실행 과정을 미리 계산해 "단계 목록"으로 만든다
+        const steps = []
+        v.forEach((i, vi) => {
+            steps.push({ line: 0, vi, i, text: `바깥 반복: v에서 다음 값을 꺼내 i = ${i}` })
+            const key = "a" + i
+            steps.push({ line: 1, vi, i, key, text: `"a"+i → "${key}" 를 만들고, data["${key}"] 배열을 찾음 → [${data[key].join(", ")}]` })
+            data[key].forEach((el, ei) => {
+                steps.push({ line: 1, vi, i, key, ei, el, text: `안쪽 반복: 배열에서 다음 값을 꺼내 element = ${el}` })
+                steps.push({ line: 2, vi, i, key, ei, el, out: `${el}`, text: `console.log(element) → ${el} 출력` })
+                steps.push({ line: 3, vi, i, key, ei, el, out: `${el} 을 보여줘`, show: true, text: `show(element) → "${el} 을 보여줘" 출력` })
+            })
+            steps.push({ line: 4, vi, i, key, text: `"${key}" 배열을 다 돌았으니 안쪽 반복 끝 → 바깥 반복으로` })
+        })
+        steps.push({ line: 5, text: "v의 모든 값을 처리해서 반복문 종료" })
+
+        const $ = (id) => document.getElementById(id)
+        $("code").innerHTML = CODE.map((t, n) => `<span class="ln" id="L${n}">${t.replace(/</g, "&lt;")}</span>`).join("")
+        $("vrow").innerHTML = v.map((x, n) => `<div class="cell" id="v${n}">${x}</div>`).join("")
+        $("data").innerHTML = Object.entries(data).map(([k, arr]) =>
+            `<div class="rowbox" id="r_${k}"><div class="row"><span class="name">"${k}":</span>` +
+            arr.map((x, n) => `<div class="cell" id="c_${k}_${n}">${x}</div>`).join("") + `</div></div>`).join("")
+
+        let pos = -1, timer = null
+
+        const render = () => {
+            const s = steps[pos]
+            document.querySelectorAll(".ln").forEach(e => e.classList.remove("on"))
+            document.querySelectorAll(".cell").forEach(e => e.classList.remove("key", "cur", "done"))
+            document.querySelectorAll(".rowbox").forEach(e => e.classList.remove("on"))
+            $("out").innerHTML = ""
+            for (let n = 0; n <= pos; n++) {
+                if (steps[n].out == null) continue
+                const d = document.createElement("div")
+                d.textContent = steps[n].out
+                if (steps[n].show) d.className = "show"
+                if (n === pos) d.classList.add("last")
+                $("out").appendChild(d)
+            }
+            $("out").scrollTop = 1e9
+            if (!s) { $("say").textContent = "▶ 재생 또는 '한 단계'를 눌러 시작하세요."; $("vi").textContent = $("vk").textContent = $("ve").textContent = "-"; $("count").textContent = ""; return }
+            $("L" + s.line).classList.add("on")
+            $("say").textContent = s.text
+            $("count").textContent = `${pos + 1} / ${steps.length} 단계`
+            $("vi").textContent = s.i ?? "-"
+            $("vk").textContent = s.key ? `"${s.key}"` : "-"
+            $("ve").textContent = s.el ?? "-"
+            if (s.vi != null) { for (let n = 0; n < s.vi; n++) $("v" + n).classList.add("done"); $("v" + s.vi).classList.add("cur") }
+            if (s.key) {
+                $("r_" + s.key).classList.add("on")
+                const arr = data[s.key]
+                arr.forEach((_, n) => { if (s.ei == null) $(`c_${s.key}_${n}`).classList.add("key"); else if (n < s.ei) $(`c_${s.key}_${n}`).classList.add("done") })
+                if (s.ei != null) $(`c_${s.key}_${s.ei}`).classList.add("cur")
+            }
+        }
+
+        const next = () => {
+            if (pos >= steps.length - 1) { pause(); return }
+            pos++; render()
+        }
+        const pause = () => { clearInterval(timer); timer = null; $("play").textContent = "▶ 재생" }
+        const play = () => {
+            if (pos >= steps.length - 1) pos = -1
+            $("play").textContent = "⏸ 일시정지"
+            clearInterval(timer)
+            timer = setInterval(next, 1300 - $("speed").value * 110)
+        }
+        $("play").onclick = () => timer ? pause() : play()
+        $("step").onclick = () => { pause(); next() }
+        $("reset").onclick = () => { pause(); pos = -1; render() }
+        $("speed").oninput = () => { if (timer) play() }
+        render()
+    </script>
+</body>
+</html>

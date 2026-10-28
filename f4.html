@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 화살표 함수 f: 숫자 하나를 받아 3배로 만들어 반환 (중괄호·return 생략형)
+        const f=(i) => i*3
+        // 처리할 숫자 배열
+        let arr = [10,20,30]
+        // 합계를 누적할 변수 (0에서 시작)
+        let sum = 0
+        // for of: 배열의 값을 앞에서부터 하나씩 v에 꺼내 반복
+        for (const v of arr) {
+            // 현재 값 출력: v= 10, v= 20, v= 30
+            console.log('v= '+v)
+            // f(v)로 3배 한 값을 sum에 더해 누적 (30 → 90 → 180)
+            sum = sum + f(v)
+        }
+        // 반복이 끝난 뒤 최종 합계 출력: 180
+        console.log(sum)
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 화살표 함수 f: 객체 하나를 받아서 계산 결과를 돌려준다.
+        // 매개변수 자리의 {a,b,z}는 "구조 분해 할당"으로,
+        // 넘겨받은 객체에서 같은 이름의 속성(a, b, z)을 바로 변수로 꺼낸다.
+        const f=({a,b,z}) => {
+            // console.log(i)
+            // a * 10 * b * z 를 계산해서 반환 (10은 고정 곱셈값)
+            return a*10*b*z
+        }
+        // 속성 이름(a, b, z)이 f의 구조 분해 이름과 같은 객체
+        let u = {"a":10,"b":1000,"z":100}
+        // 객체 u를 통째로 전달 → a=10, b=1000, z=100 으로 꺼내져 10*10*1000*100 = 10,000,000
+        let a = f(u)
+        // 결과 출력: 10000000
+        console.log(a)
+    </script>
+</body>
+</html>

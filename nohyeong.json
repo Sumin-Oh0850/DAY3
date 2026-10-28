@@ -1,0 +1,507 @@
+{
+    "region":  "제주특별자치도",
+    "topic":  "제주시 노형동 식당·카페",
+    "note":  "※ Google 지도 검색 결과 중 행정동 경계 안에 있는 곳을 리뷰 수 순으로 25곳씩 선정 (2026.10.28 기준). 영업 여부·주소는 방문 전 확인 권장.",
+    "items":  [
+                  {
+                      "name":  "국시트멍 제주고기국수",
+                      "category":  "식당",
+                      "description":  "제주시 진군길 31-3 · Google 리뷰 896개",
+                      "score":  86,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EA%B5%AD%EC%8B%9C%ED%8A%B8%EB%A9%8D%20%EC%A0%9C%EC%A3%BC%EA%B3%A0%EA%B8%B0%EA%B5%AD%EC%88%98",
+                      "rating":  4.3,
+                      "reviews":  896
+                  },
+                  {
+                      "name":  "노형수산시장",
+                      "category":  "식당",
+                      "description":  "제주시 노형동 2344 (지번) · Google 리뷰 616개",
+                      "score":  76,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EB%85%B8%ED%98%95%EC%88%98%EC%82%B0%EC%8B%9C%EC%9E%A5",
+                      "rating":  3.8,
+                      "reviews":  616
+                  },
+                  {
+                      "name":  "제주해장국 노형드림타워점",
+                      "category":  "식당",
+                      "description":  "제주시 원노형남1길 12 · Google 리뷰 445개",
+                      "score":  98,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EC%A0%9C%EC%A3%BC%ED%95%B4%EC%9E%A5%EA%B5%AD%20%EB%85%B8%ED%98%95%EB%93%9C%EB%A6%BC%ED%83%80%EC%9B%8C%EC%A0%90",
+                      "rating":  4.9,
+                      "reviews":  445
+                  },
+                  {
+                      "name":  "양대감 제주흑돼지",
+                      "category":  "식당",
+                      "description":  "제주시 원노형로 36 · Google 리뷰 442개",
+                      "score":  88,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EC%96%91%EB%8C%80%EA%B0%90%20%EC%A0%9C%EC%A3%BC%ED%9D%91%EB%8F%BC%EC%A7%80",
+                      "rating":  4.4,
+                      "reviews":  442
+                  },
+                  {
+                      "name":  "제주 장수국수 노형본점",
+                      "category":  "식당",
+                      "description":  "제주시 원노형6길 12-1 · Google 리뷰 360개",
+                      "score":  96,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EC%A0%9C%EC%A3%BC%20%EC%9E%A5%EC%88%98%EA%B5%AD%EC%88%98%20%EB%85%B8%ED%98%95%EB%B3%B8%EC%A0%90",
+                      "rating":  4.8,
+                      "reviews":  360
+                  },
+                  {
+                      "name":  "오키나와",
+                      "category":  "식당",
+                      "description":  "제주시 노형동 (상세주소 미기재) · Google 리뷰 314개",
+                      "score":  86,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EC%98%A4%ED%82%A4%EB%82%98%EC%99%80",
+                      "rating":  4.3,
+                      "reviews":  314
+                  },
+                  {
+                      "name":  "하여금 흑돼지 전문점",
+                      "category":  "식당",
+                      "description":  "제주시 원노형4길 11 · Google 리뷰 298개",
+                      "score":  96,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%ED%95%98%EC%97%AC%EA%B8%88%20%ED%9D%91%EB%8F%BC%EC%A7%80%20%EC%A0%84%EB%AC%B8%EC%A0%90",
+                      "rating":  4.8,
+                      "reviews":  298
+                  },
+                  {
+                      "name":  "마요네즈",
+                      "category":  "식당",
+                      "description":  "제주시 노형동 1068-5 (지번) · Google 리뷰 295개",
+                      "score":  90,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EB%A7%88%EC%9A%94%EB%84%A4%EC%A6%88",
+                      "rating":  4.5,
+                      "reviews":  295
+                  },
+                  {
+                      "name":  "담아래",
+                      "category":  "식당",
+                      "description":  "제주시 1100로 3164 · Google 리뷰 291개",
+                      "score":  88,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EB%8B%B4%EC%95%84%EB%9E%98",
+                      "rating":  4.4,
+                      "reviews":  291
+                  },
+                  {
+                      "name":  "금돈 흑돼지",
+                      "category":  "식당",
+                      "description":  "제주시 원노형남1길 16 · Google 리뷰 277개",
+                      "score":  96,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EA%B8%88%EB%8F%88%20%ED%9D%91%EB%8F%BC%EC%A7%80",
+                      "rating":  4.8,
+                      "reviews":  277
+                  },
+                  {
+                      "name":  "문섬횟집",
+                      "category":  "식당",
+                      "description":  "제주시 원노형로 45 · Google 리뷰 237개",
+                      "score":  88,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EB%AC%B8%EC%84%AC%ED%9A%9F%EC%A7%91",
+                      "rating":  4.4,
+                      "reviews":  237
+                  },
+                  {
+                      "name":  "불턱정식당",
+                      "category":  "식당",
+                      "description":  "제주시 원노형6길 2 · Google 리뷰 214개",
+                      "score":  90,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EB%B6%88%ED%84%B1%EC%A0%95%EC%8B%9D%EB%8B%B9",
+                      "rating":  4.5,
+                      "reviews":  214
+                  },
+                  {
+                      "name":  "노형진미식당",
+                      "category":  "식당",
+                      "description":  "제주시 노형동 2612-9 (지번) · Google 리뷰 159개",
+                      "score":  90,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EB%85%B8%ED%98%95%EC%A7%84%EB%AF%B8%EC%8B%9D%EB%8B%B9",
+                      "rating":  4.5,
+                      "reviews":  159
+                  },
+                  {
+                      "name":  "제주 우대",
+                      "category":  "식당",
+                      "description":  "제주시 노연로 39 · Google 리뷰 133개",
+                      "score":  98,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EC%A0%9C%EC%A3%BC%20%EC%9A%B0%EB%8C%80",
+                      "rating":  4.9,
+                      "reviews":  133
+                  },
+                  {
+                      "name":  "신토불이수산식당",
+                      "category":  "식당",
+                      "description":  "제주시 정존3길 25 · Google 리뷰 124개",
+                      "score":  90,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EC%8B%A0%ED%86%A0%EB%B6%88%EC%9D%B4%EC%88%98%EC%82%B0%EC%8B%9D%EB%8B%B9",
+                      "rating":  4.5,
+                      "reviews":  124
+                  },
+                  {
+                      "name":  "D’VIEW",
+                      "category":  "식당",
+                      "description":  "제주시 노형동 3801-9 (지번) · Google 리뷰 119개",
+                      "score":  94,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20D%E2%80%99VIEW",
+                      "rating":  4.7,
+                      "reviews":  119
+                  },
+                  {
+                      "name":  "물만난고기",
+                      "category":  "식당",
+                      "description":  "제주시 노형동 (상세주소 미기재) · Google 리뷰 97개",
+                      "score":  86,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EB%AC%BC%EB%A7%8C%EB%82%9C%EA%B3%A0%EA%B8%B0",
+                      "rating":  4.3,
+                      "reviews":  97
+                  },
+                  {
+                      "name":  "홋카이도일식",
+                      "category":  "식당",
+                      "description":  "제주시 노연로 42 · Google 리뷰 96개",
+                      "score":  80,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%ED%99%8B%EC%B9%B4%EC%9D%B4%EB%8F%84%EC%9D%BC%EC%8B%9D",
+                      "rating":  4,
+                      "reviews":  96
+                  },
+                  {
+                      "name":  "해모루",
+                      "category":  "식당",
+                      "description":  "제주시 월랑로4길 6 · Google 리뷰 89개",
+                      "score":  86,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%ED%95%B4%EB%AA%A8%EB%A3%A8",
+                      "rating":  4.3,
+                      "reviews":  89
+                  },
+                  {
+                      "name":  "옹기밥상",
+                      "category":  "식당",
+                      "description":  "제주시 미리내길 171-4 · Google 리뷰 75개",
+                      "score":  90,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EC%98%B9%EA%B8%B0%EB%B0%A5%EC%83%81",
+                      "rating":  4.5,
+                      "reviews":  75
+                  },
+                  {
+                      "name":  "일과삶사이틈",
+                      "category":  "식당",
+                      "description":  "제주시 원노형5길 17-9 · Google 리뷰 67개",
+                      "score":  86,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EC%9D%BC%EA%B3%BC%EC%82%B6%EC%82%AC%EC%9D%B4%ED%8B%88",
+                      "rating":  4.3,
+                      "reviews":  67
+                  },
+                  {
+                      "name":  "탕수육",
+                      "category":  "식당",
+                      "description":  "제주시 원노형9길 8 · Google 리뷰 62개",
+                      "score":  86,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%ED%83%95%EC%88%98%EC%9C%A1",
+                      "rating":  4.3,
+                      "reviews":  62
+                  },
+                  {
+                      "name":  "더한근",
+                      "category":  "식당",
+                      "description":  "제주시 노형동 (상세주소 미기재) · Google 리뷰 59개",
+                      "score":  96,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EB%8D%94%ED%95%9C%EA%B7%BC",
+                      "rating":  4.8,
+                      "reviews":  59
+                  },
+                  {
+                      "name":  "국수대표",
+                      "category":  "식당",
+                      "description":  "제주시 노형동 1320-1 (지번) · Google 리뷰 48개",
+                      "score":  92,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EA%B5%AD%EC%88%98%EB%8C%80%ED%91%9C",
+                      "rating":  4.6,
+                      "reviews":  48
+                  },
+                  {
+                      "name":  "고기스테이션",
+                      "category":  "식당",
+                      "description":  "제주시 원노형남1길 23 · Google 리뷰 30개",
+                      "score":  92,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EA%B3%A0%EA%B8%B0%EC%8A%A4%ED%85%8C%EC%9D%B4%EC%85%98",
+                      "rating":  4.6,
+                      "reviews":  30
+                  },
+                  {
+                      "name":  "스타벅스",
+                      "category":  "카페",
+                      "description":  "제주시 도령로 27 · Google 리뷰 783개",
+                      "score":  84,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EC%8A%A4%ED%83%80%EB%B2%85%EC%8A%A4",
+                      "rating":  4.2,
+                      "reviews":  783
+                  },
+                  {
+                      "name":  "글로뮤로",
+                      "category":  "카페",
+                      "description":  "제주시 수목원길 16-14 · Google 리뷰 559개",
+                      "score":  86,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EA%B8%80%EB%A1%9C%EB%AE%A4%EB%A1%9C",
+                      "rating":  4.3,
+                      "reviews":  559
+                  },
+                  {
+                      "name":  "미스틱3도",
+                      "category":  "카페",
+                      "description":  "제주시 1100로 2894-49 · Google 리뷰 450개",
+                      "score":  88,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EB%AF%B8%EC%8A%A4%ED%8B%B13%EB%8F%84",
+                      "rating":  4.4,
+                      "reviews":  450
+                  },
+                  {
+                      "name":  "플랫4커피",
+                      "category":  "카페",
+                      "description":  "제주시 원노형5길 27 · Google 리뷰 229개",
+                      "score":  88,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%ED%94%8C%EB%9E%AB4%EC%BB%A4%ED%94%BC",
+                      "rating":  4.4,
+                      "reviews":  229
+                  },
+                  {
+                      "name":  "투썸플레이스",
+                      "category":  "카페",
+                      "description":  "제주시 월랑로 70 · Google 리뷰 212개",
+                      "score":  82,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%ED%88%AC%EC%8D%B8%ED%94%8C%EB%A0%88%EC%9D%B4%EC%8A%A4",
+                      "rating":  4.1,
+                      "reviews":  212
+                  },
+                  {
+                      "name":  "숨타르",
+                      "category":  "카페",
+                      "description":  "제주시 노형동 1280-1 (지번) · Google 리뷰 174개",
+                      "score":  86,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EC%88%A8%ED%83%80%EB%A5%B4",
+                      "rating":  4.3,
+                      "reviews":  174
+                  },
+                  {
+                      "name":  "카페온",
+                      "category":  "카페",
+                      "description":  "제주시 다랑곶6길 39 · Google 리뷰 144개",
+                      "score":  94,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EC%B9%B4%ED%8E%98%EC%98%A8",
+                      "rating":  4.7,
+                      "reviews":  144
+                  },
+                  {
+                      "name":  "소인커피",
+                      "category":  "카페",
+                      "description":  "제주시 원노형8길 21 · Google 리뷰 116개",
+                      "score":  96,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EC%86%8C%EC%9D%B8%EC%BB%A4%ED%94%BC",
+                      "rating":  4.8,
+                      "reviews":  116
+                  },
+                  {
+                      "name":  "카페901",
+                      "category":  "카페",
+                      "description":  "제주시 노형동 288-39 (지번) · Google 리뷰 114개",
+                      "score":  94,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EC%B9%B4%ED%8E%98901",
+                      "rating":  4.7,
+                      "reviews":  114
+                  },
+                  {
+                      "name":  "스타벅스",
+                      "category":  "카페",
+                      "description":  "제주시 월랑로 66 · Google 리뷰 104개",
+                      "score":  84,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EC%8A%A4%ED%83%80%EB%B2%85%EC%8A%A4",
+                      "rating":  4.2,
+                      "reviews":  104
+                  },
+                  {
+                      "name":  "어바웃커피 노형점",
+                      "category":  "카페",
+                      "description":  "제주시 노형동 1043-2 (지번) · Google 리뷰 95개",
+                      "score":  86,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EC%96%B4%EB%B0%94%EC%9B%83%EC%BB%A4%ED%94%BC%20%EB%85%B8%ED%98%95%EC%A0%90",
+                      "rating":  4.3,
+                      "reviews":  95
+                  },
+                  {
+                      "name":  "투썸플레이스",
+                      "category":  "카페",
+                      "description":  "제주시 1100로 3339 · Google 리뷰 78개",
+                      "score":  80,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%ED%88%AC%EC%8D%B8%ED%94%8C%EB%A0%88%EC%9D%B4%EC%8A%A4",
+                      "rating":  4,
+                      "reviews":  78
+                  },
+                  {
+                      "name":  "이디야커피",
+                      "category":  "카페",
+                      "description":  "제주시 연북로 34 · Google 리뷰 64개",
+                      "score":  82,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EC%9D%B4%EB%94%94%EC%95%BC%EC%BB%A4%ED%94%BC",
+                      "rating":  4.1,
+                      "reviews":  64
+                  },
+                  {
+                      "name":  "휘베이글",
+                      "category":  "카페",
+                      "description":  "제주시 노형5길 6 · Google 리뷰 60개",
+                      "score":  96,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%ED%9C%98%EB%B2%A0%EC%9D%B4%EA%B8%80",
+                      "rating":  4.8,
+                      "reviews":  60
+                  },
+                  {
+                      "name":  "베이커블",
+                      "category":  "카페",
+                      "description":  "제주시 노형동 1474-2 (지번) · Google 리뷰 53개",
+                      "score":  88,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EB%B2%A0%EC%9D%B4%EC%BB%A4%EB%B8%94",
+                      "rating":  4.4,
+                      "reviews":  53
+                  },
+                  {
+                      "name":  "본조르노베이커리",
+                      "category":  "카페",
+                      "description":  "제주시 다랑곶4길 68 · Google 리뷰 31개",
+                      "score":  92,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EB%B3%B8%EC%A1%B0%EB%A5%B4%EB%85%B8%EB%B2%A0%EC%9D%B4%EC%BB%A4%EB%A6%AC",
+                      "rating":  4.6,
+                      "reviews":  31
+                  },
+                  {
+                      "name":  "컴플리트커피 노형점",
+                      "category":  "카페",
+                      "description":  "제주시 원노형6길 21 · Google 리뷰 24개",
+                      "score":  88,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EC%BB%B4%ED%94%8C%EB%A6%AC%ED%8A%B8%EC%BB%A4%ED%94%BC%20%EB%85%B8%ED%98%95%EC%A0%90",
+                      "rating":  4.4,
+                      "reviews":  24
+                  },
+                  {
+                      "name":  "로우파이",
+                      "category":  "카페",
+                      "description":  "제주시 노형동 5길 21 (Google 표기) · Google 리뷰 24개",
+                      "score":  90,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EB%A1%9C%EC%9A%B0%ED%8C%8C%EC%9D%B4",
+                      "rating":  4.5,
+                      "reviews":  24
+                  },
+                  {
+                      "name":  "스타벅스",
+                      "category":  "카페",
+                      "description":  "제주시 노형로 376 · Google 리뷰 23개",
+                      "score":  90,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EC%8A%A4%ED%83%80%EB%B2%85%EC%8A%A4",
+                      "rating":  4.5,
+                      "reviews":  23
+                  },
+                  {
+                      "name":  "라운드립스",
+                      "category":  "카페",
+                      "description":  "제주시 노형동 3807-5 (지번) · Google 리뷰 12개",
+                      "score":  96,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EB%9D%BC%EC%9A%B4%EB%93%9C%EB%A6%BD%EC%8A%A4",
+                      "rating":  4.8,
+                      "reviews":  12
+                  },
+                  {
+                      "name":  "제주커피로스테리아",
+                      "category":  "카페",
+                      "description":  "제주시 월랑북2길 16 · Google 리뷰 10개",
+                      "score":  100,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EC%A0%9C%EC%A3%BC%EC%BB%A4%ED%94%BC%EB%A1%9C%EC%8A%A4%ED%85%8C%EB%A6%AC%EC%95%84",
+                      "rating":  5,
+                      "reviews":  10
+                  },
+                  {
+                      "name":  "빠삐용디저트",
+                      "category":  "카페",
+                      "description":  "제주시 노연로 54 · Google 리뷰 9개",
+                      "score":  96,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EB%B9%A0%EC%82%90%EC%9A%A9%EB%94%94%EC%A0%80%ED%8A%B8",
+                      "rating":  4.8,
+                      "reviews":  9
+                  },
+                  {
+                      "name":  "빽다방 제주평화로SK점",
+                      "category":  "카페",
+                      "description":  "제주시 노형로 121 · Google 리뷰 9개",
+                      "score":  84,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EB%B9%BD%EB%8B%A4%EB%B0%A9%20%EC%A0%9C%EC%A3%BC%ED%8F%89%ED%99%94%EB%A1%9CSK%EC%A0%90",
+                      "rating":  4.2,
+                      "reviews":  9
+                  },
+                  {
+                      "name":  "제주모락",
+                      "category":  "카페",
+                      "description":  "제주시 원노형8길 19 · Google 리뷰 7개",
+                      "score":  94,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%EC%A0%9C%EC%A3%BC%EB%AA%A8%EB%9D%BD",
+                      "rating":  4.7,
+                      "reviews":  7
+                  },
+                  {
+                      "name":  "티나케이크 제주시점",
+                      "category":  "카페",
+                      "description":  "제주시 노형4길 18 · Google 리뷰 7개",
+                      "score":  92,
+                      "selected":  false,
+                      "source":  "https://www.google.com/maps/search/?api=1\u0026query=%EC%A0%9C%EC%A3%BC%20%ED%8B%B0%EB%82%98%EC%BC%80%EC%9D%B4%ED%81%AC%20%EC%A0%9C%EC%A3%BC%EC%8B%9C%EC%A0%90",
+                      "rating":  4.6,
+                      "reviews":  7
+                  }
+              ]
+}
