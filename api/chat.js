@@ -7,6 +7,7 @@ const MODELS = (process.env.GEMINI_MODELS ||
   .split(",").map((s) => s.trim()).filter(Boolean);
 const unavailableUntil = {}; // 모델 → 다시 시도할 수 있는 시각(ms)
 const MAX_TURNS = 6;
+const CALL_TIMEOUT_MS = 15000; // 모델 한 번 호출의 제한 시간
 
 const SYSTEM =
   "너는 제주 여행 추천 도우미다. 사용자의 말에서 지역(동쪽·서쪽·서귀포·제주시)과 실내/야외 선호를 파악한다. " +
@@ -27,19 +28,28 @@ async function callGemini(contents, skipped) {
   let lastError = "사용 가능한 모델이 없습니다.";
   for (const model of MODELS) {
     if ((unavailableUntil[model] || 0) > Date.now()) continue;
-    const r = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
-      {
-        method: "POST",
-        headers: { "content-type": "application/json", "x-goog-api-key": process.env.GEMINI_API_KEY },
-        body: JSON.stringify({
-          systemInstruction: { parts: [{ text: SYSTEM }] },
-          contents,
-          tools: [{ functionDeclarations }],
-        }),
-      }
-    );
-    const data = await r.json();
+    let r, data;
+    try {
+      r = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
+        {
+          method: "POST",
+          headers: { "content-type": "application/json", "x-goog-api-key": process.env.GEMINI_API_KEY },
+          body: JSON.stringify({
+            systemInstruction: { parts: [{ text: SYSTEM }] },
+            contents,
+            tools: [{ functionDeclarations }],
+          }),
+          signal: AbortSignal.timeout(CALL_TIMEOUT_MS), // 응답이 없으면 다음 모델로
+        }
+      );
+      data = await r.json();
+    } catch (e) {
+      lastError = `${model}: 응답 지연/연결 실패 (${e.name})`;
+      unavailableUntil[model] = Date.now() + 60 * 1000;
+      skipped.push(model);
+      continue;
+    }
     if (r.ok) return { data, model };
 
     const msg = data.error?.message || `HTTP ${r.status}`;
